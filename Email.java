@@ -14,6 +14,14 @@ public class Email {
 	private String companySuffix = "UNI.com";
 
     public Email(String firstName, String lastName){
+    firstName = firstName;
+    lastName = lastName;
+    
+    department = setDepartment();
+    
+    password = randomPasssword(defaultPasswordLenght);
+    System.out.println("Tú contraseña es: " + password);
+
 
     }
 }
