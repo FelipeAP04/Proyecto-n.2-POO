@@ -13,5 +13,7 @@ public class Email {
 	private String alternateEmail;
 	private String companySuffix = "UNI.com";
 
-    
+    public Email(String firstName, String lastName){
+
+    }
 }
