@@ -27,5 +27,12 @@ public class Email { //definir clase
         //cra email personalizado
         email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
 		System.out.println("Tu correo es: " + email);
+	// Pregunta el departamento
+	
+	private String setDepartment() { 
+		System.out.print("CÓDIGOS DE DEPARTAMENTO\n1 para estudiantes\n2 para profesor\n3 ninguno de los 			anteriores\ncódigo aquí: " );
+		Scanner in = new Scanner(System.in);
+		int depChoice = in.nextInt();
+		
     }
 }
