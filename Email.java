@@ -49,4 +49,10 @@ public class Email { //definir clase
 		}
 		return new String(password);
     }
+	// Genera un mailbox
+
+		public void setMailboxCapacity(int capacity) {
+		this.mailboxCapacity = capacity;
+	}
+
 }
