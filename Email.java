@@ -36,6 +36,11 @@ public class Email { //definir clase
 		if(depChoice == 1) { return "estudiante"; }
 		else if (depChoice == 2) { return "profesor"; }
 		else if (depChoice == 2) { return "ninguno de los anteriores"; }
-		else { return ""; }	
+		else { return ""; }
+
+	// Genera una contraseña aleatoria
+	   
+	private String randomPasssword(int length) {
+		String passwordSet = "ABCDEFGHIJKLMNOPQRSTUWXYZ1234567890!@#$%^&*+";	
     }
 }
