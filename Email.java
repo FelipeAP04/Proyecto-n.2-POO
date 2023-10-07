@@ -42,5 +42,7 @@ public class Email { //definir clase
 	   
 	private String randomPasssword(int length) {
 		String passwordSet = "ABCDEFGHIJKLMNOPQRSTUWXYZ1234567890!@#$%^&*+";	
+		char[] password = new char[length];
+		for (int i=0; i<length;i++) {
     }
 }
