@@ -32,7 +32,10 @@ public class Email { //definir clase
 	private String setDepartment() { 
 		System.out.print("CÓDIGOS DE DEPARTAMENTO\n1 para estudiantes\n2 para profesor\n3 ninguno de los 			anteriores\ncódigo aquí: " );
 		Scanner in = new Scanner(System.in);
-		int depChoice = in.nextInt();
-		
+		int depChoice = in.nextInt();int depChoice = in.nextInt();
+		if(depChoice == 1) { return "estudiante"; }
+		else if (depChoice == 2) { return "profesor"; }
+		else if (depChoice == 2) { return "ninguno de los anteriores"; }
+		else { return ""; }	
     }
 }
