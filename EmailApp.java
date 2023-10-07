@@ -2,7 +2,7 @@ package emailapp; //meter archivo en el paquete
 
 import java.util.Scanner; //importar Java Scanner
 
-public class EmailApp { //Declarar clase
+public class EmailApp {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in); //crear nuevo scaner
