@@ -28,4 +28,8 @@ public class Email { //definir clase
         email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
 		System.out.println("Tu correo es: " + email);
     }
+	private String setDepartment() {
+		
+		
+	}
 }
