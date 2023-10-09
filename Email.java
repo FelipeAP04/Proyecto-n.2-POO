@@ -60,4 +60,10 @@ public class Email { //definir clase
 	public void setAlternateEmail(String altEmail) {
 		this.alternateEmail = altEmail;
 	}
+
+	//Cambio de contraseña
+	
+	public void changepassword(String password) {
+	
+	}
 }
