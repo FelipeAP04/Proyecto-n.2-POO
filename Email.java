@@ -58,6 +58,6 @@ public class Email { //definir clase
 	// Genera el correo alternativo
 	
 	public void setAlternateEmail(String altEmail) {
-		
+		this.alternateEmail = altEmail;
 	}
 }
