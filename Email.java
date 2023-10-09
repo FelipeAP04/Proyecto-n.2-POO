@@ -55,4 +55,9 @@ public class Email { //definir clase
 		this.mailboxCapacity = capacity;
 	}
 
+	// Genera el correo alternativo
+	
+	public void setAlternateEmail(String altEmail) {
+		
+	}
 }
