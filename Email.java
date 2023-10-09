@@ -27,9 +27,32 @@ public class Email { //definir clase
         //cra email personalizado
         email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
 		System.out.println("Tu correo es: " + email);
+	// Pregunta el departamento
+	
+	private String setDepartment() { 
+		System.out.print("CÓDIGOS DE DEPARTAMENTO\n1 para estudiantes\n2 para profesor\n3 ninguno de los 			anteriores\ncódigo aquí: " );
+		Scanner in = new Scanner(System.in);
+		int depChoice = in.nextInt();int depChoice = in.nextInt();
+		if(depChoice == 1) { return "estudiante"; }
+		else if (depChoice == 2) { return "profesor"; }
+		else if (depChoice == 2) { return "ninguno de los anteriores"; }
+		else { return ""; }
+
+	// Genera una contraseña aleatoria
+	   
+	private String randomPasssword(int length) {
+		String passwordSet = "ABCDEFGHIJKLMNOPQRSTUWXYZ1234567890!@#$%^&*+";	
+		char[] password = new char[length];
+		for (int i=0; i<length;i++) {
+		int rand = (int)(Math.random() * passwordSet.length());
+		password[i] = passwordSet.charAt(rand);
+		}
+		return new String(password);
     }
-	private String setDepartment() {
-		
-		
+	// Genera un mailbox
+
+		public void setMailboxCapacity(int capacity) {
+		this.mailboxCapacity = capacity;
 	}
+
 }
