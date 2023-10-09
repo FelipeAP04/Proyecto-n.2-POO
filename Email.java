@@ -64,10 +64,16 @@ public class Email { //definir clase
 	//Cambio de contraseña
 	
 	public void changepassword(String password) {
-	this.password = password; 
+		this.password = password; 
 	}
 	public int getmMailboxCapacity() {return mailboxCapacity; }
 	public String getAlternateEmail() { return alternateEmail;}
 	public String getPassword() { return password;}
+	
+	public String showInfo() {
+		return "NOMBRE:	" + firstName + " " + lastName + 
+				" \nCORREO DE: " + email + " " +
+				" \nCAPACIDAD DEL BUZÓN: " + mailboxCapacity + " " +"mb";
+								
 	}
 }
