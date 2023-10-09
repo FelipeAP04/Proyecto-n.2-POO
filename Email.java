@@ -39,7 +39,7 @@ public class Email { //definir clase
 		else { return ""; }
 
 	// Genera una contraseña aleatoria
-	   
+	
 	private String randomPasssword(int length) {
 		String passwordSet = "ABCDEFGHIJKLMNOPQRSTUWXYZ1234567890!@#$%^&*+";	
 		char[] password = new char[length];
