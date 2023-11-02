@@ -1,9 +1,12 @@
 package Emailapp;
+import com.opencsv.CSVReader;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import java.io.FileReader;
 import java.io.IOException;
+
+import java.io.FileReader;
+
+import java.io.FileReader;
 
 public class Controlador {
     public void crearVerificarCSV() {
@@ -35,8 +38,28 @@ public class Controlador {
         }
     }
     
-    public void leerDatosCSV(){
-    String archivo="";
+    public void leerDatosCSV() {
+        String archivo = "dispositivos.csv";
+        try (CSVReader reader = new CSVReader(new FileReader(archivo))) {
+            String[] nextLine;
+            while ((nextLine = reader.readNext()) != null) {
+                // Assuming the CSV structure is: "Nombre, Apellido, Departamento, Contraseña, Correo"
+                String nombre = nextLine[0];
+                String apellido = nextLine[1];
+                String departamento = nextLine[2];
+                String contraseña = nextLine[3];
+                String correo = nextLine[4];
+
+                System.out.println("Nombre: " + nombre);
+                System.out.println("Apellido: " + apellido);
+                System.out.println("Departamento: " + departamento);
+                System.out.println("Contraseña: " + contraseña);
+                System.out.println("Correo: " + correo);
+                System.out.println("---------------------------");
+            }
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo CSV: " + e.getMessage());
+        }
     }
 
 }
