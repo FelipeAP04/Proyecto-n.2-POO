@@ -34,5 +34,9 @@ public class Controlador {
             System.out.println("Error al escribir: "+ e.getMessage());
         }
     }
+    
+    public void leerDatosCSV(){
+    String archivo="";
+    }
 
 }
