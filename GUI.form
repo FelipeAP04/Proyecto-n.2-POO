@@ -11,3 +11,7 @@
       <Color blue="8c" green="c6" red="8b" type="rgb"/>
     </Property>
   </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
