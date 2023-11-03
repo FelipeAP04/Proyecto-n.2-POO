@@ -1,10 +1,9 @@
 package emailapp;//meter archivo en el paquete
 
-import java.util.Scanner;//importar Java Scanner
+import java.util.Scanner;
 
-public class Email { //definir clase
-    //crear variables de la clase
-    private String firstName;
+public class Email {
+	private String firstName;
 	private String lastName;
 	private String password;
 	private String department;
@@ -13,53 +12,64 @@ public class Email { //definir clase
 	private int defaultPasswordLenght = 10;
 	private String alternateEmail;
 	private String companySuffix = "UNI.com";
-
-    public Email(String firstName, String lastName){ //Constructor de la clase
-		//llama firstName, lastName y department en el constructor
-        this.firstName = firstName;
-		this.lastName = lastName;
-		this.department = setDepartment(); //pregunta por el departamento del usuario
+	
+	// Constructor que recibe el primer nombre y el apellido
+	
+		public Email(String firstName, String lastName, String department) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.department = department;
+		// Pregunta por el método del departamento - lo regresa
 		
-        //define una contraseña
-		this.password = randomPasssword(defaultPasswordLenght);
-		System.out.println("Tú contraseña es: " + this.password);
+		
+		// método de contraseña aleatoria
 
-        //cra email personalizado
-        email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
-		System.out.println("Tu correo es: " + email);
+                this.password = randomPasssword(defaultPasswordLenght);
+                email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
+                    }
+	
 	// Pregunta el departamento
 	
-	private String setDepartment() { 
-		System.out.print("CÓDIGOS DE DEPARTAMENTO\n1 para estudiantes\n2 para profesor\n3 ninguno de los 			anteriores\ncódigo aquí: " );
+	private String setDepartment() {
+		System.out.print("CÓDIGOS DE DEPARTAMENTO\n1 para estudiantes\n2 para profesor\n3 ninguno de los anteriores\ncódigo aquí: " );
 		Scanner in = new Scanner(System.in);
-		int depChoice = in.nextInt();int depChoice = in.nextInt();
-		if(depChoice == 1) { return "estudiante"; }
+		int depChoice = in.nextInt();
+		if(depChoice == 1) { return "estudiantes"; }
 		else if (depChoice == 2) { return "profesor"; }
 		else if (depChoice == 2) { return "ninguno de los anteriores"; }
-		else { return ""; }
-
-	// Genera una contraseña aleatoria
+		else { return ""; }	
+		
+	}
 	
+	
+	// Genera una contraseña aleatoria
 	private String randomPasssword(int length) {
-		String passwordSet = "ABCDEFGHIJKLMNOPQRSTUWXYZ1234567890!@#$%^&*+";	
+		String passwordSet = "ABCDEFGHIJKLMNOPQRSTUWXYZ1234567890!@#$%^&*+";
 		char[] password = new char[length];
 		for (int i=0; i<length;i++) {
-		int rand = (int)(Math.random() * passwordSet.length());
-		password[i] = passwordSet.charAt(rand);
+			int rand = (int)(Math.random() * passwordSet.length());
+			password[i] = passwordSet.charAt(rand);
 		}
 		return new String(password);
-    }
+	}
+
+
 	// Genera un mailbox
 
-		public void setMailboxCapacity(int capacity) {
+	public void setMailboxCapacity(int capacity) {
 		this.mailboxCapacity = capacity;
 	}
 
+	
 	// Genera el correo alternativo
 	
 	public void setAlternateEmail(String altEmail) {
 		this.alternateEmail = altEmail;
 	}
+	
+        public String getEmail() {
+        return email;
+        }
 
 	//Cambio de contraseña
 	
