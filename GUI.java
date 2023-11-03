@@ -65,3 +65,27 @@ public class GUI extends javax.swing.JFrame {
             	SumittActionPerformed(evt);
         	}
     	});
+
+    	jLabel5.setText("Enviar datos");
+
+    	jLabel6.setText("Capacidad");
+
+    	jLabel7.setText("Contraseña");
+    	jLabel7.setName("OutPut_1"); // NOI18N
+
+    	jLabel8.setText("Correo");
+    	jLabel8.setName("OutPut_2"); // NOI18N
+
+    	Contraseña.setEditable(false);
+
+    	Correo.setEditable(false);
+
+    	Extencion.setEditable(false);
+
+    	Divicion.add(jRadioButton1);
+    	jRadioButton1.setText("Estudiante");
+    	jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        	public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	jRadioButton1ActionPerformed(evt);
+        	}
+    	});
