@@ -43,3 +43,25 @@ public class GUI extends javax.swing.JFrame {
     	jRadioButton1 = new javax.swing.JRadioButton();
     	jRadioButton2 = new javax.swing.JRadioButton();
     	jRadioButton3 = new javax.swing.JRadioButton();
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+    	setBackground(new java.awt.Color(139, 198, 140));
+
+    	jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+    	jLabel1.setText("Creacion de correos");
+
+    	Nombre.setToolTipText("");
+    	Nombre.setName("Text_1"); // NOI18N
+
+    	jLabel2.setText("Ingresa tu nombre");
+
+    	jLabel3.setText("Ingresa tus apellidos");
+
+    	Apellido.setToolTipText("Ej: Perez");
+    	Apellido.setName("Text_2"); // NOI18N
+
+    	Sumitt.setText("Enter");
+    	Sumitt.addActionListener(new java.awt.event.ActionListener() {
+        	public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	SumittActionPerformed(evt);
+        	}
+    	});
