@@ -80,7 +80,7 @@ public class GUI extends javax.swing.JFrame {
 
     	Correo.setEditable(false);
 
-    	Extencion.setEditable(True);
+    	Extencion.setEditable(true);
 
     	Divicion.add(jRadioButton1);
     	jRadioButton1.setText("Estudiante");
@@ -202,7 +202,7 @@ public class GUI extends javax.swing.JFrame {
 	} else if (jRadioButton2.isSelected()) {
     	department = "profesor";
 	} else if (jRadioButton3.isSelected()) {
-    	department = "ninguno de los anteriores";
+    	department = "";
 	}
 
 	Email email = new Email(firstName, lastName, department);
@@ -210,6 +210,9 @@ public class GUI extends javax.swing.JFrame {
 	// Generador de labels de email y contraseña 
 	Correo.setText(email.getEmail());
 	Contraseña.setText(email.getPassword());
+	Extencion.setText("500 MB");
+
+
 	}//GEN-LAST:event_SumittActionPerformed
 
 	private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -228,11 +231,7 @@ public class GUI extends javax.swing.JFrame {
  	* @param args the command line arguments
  	*/
 	public static void main(String args[]) {
-    	/* Set the Nimbus look and feel */
-    	//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-    	/* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-     	* For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-     	*/
+
     	try {
         	for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
             	if ("Nimbus".equals(info.getName())) {
