@@ -259,4 +259,25 @@ public class GUI extends javax.swing.JFrame {
         	}
     	});
 	}
+// Variables declaration - do not modify//GEN-BEGIN:variables
+private javax.swing.JTextField Apellido;
+private javax.swing.JTextField Contraseña;
+private javax.swing.JTextField Correo;
+private javax.swing.ButtonGroup Divicion;
+private javax.swing.JTextField Extencion;
+private javax.swing.JTextField Nombre;
+private javax.swing.JButton Sumitt;
+private javax.swing.JLabel jLabel1;
+private javax.swing.JLabel jLabel2;
+private javax.swing.JLabel jLabel3;
+private javax.swing.JLabel jLabel5;
+private javax.swing.JLabel jLabel6;
+private javax.swing.JLabel jLabel7;
+private javax.swing.JLabel jLabel8;
+private javax.swing.JRadioButton jRadioButton1;
+private javax.swing.JRadioButton jRadioButton2;
+private javax.swing.JRadioButton jRadioButton3;
+// End of variables declaration//GEN-END:variables
+}
+
 
