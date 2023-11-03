@@ -39,7 +39,7 @@ public class Email { //definir clase
 		else { return ""; }
 
 	// Genera una contraseña aleatoria
-	   
+	
 	private String randomPasssword(int length) {
 		String passwordSet = "ABCDEFGHIJKLMNOPQRSTUWXYZ1234567890!@#$%^&*+";	
 		char[] password = new char[length];
@@ -55,4 +55,25 @@ public class Email { //definir clase
 		this.mailboxCapacity = capacity;
 	}
 
+	// Genera el correo alternativo
+	
+	public void setAlternateEmail(String altEmail) {
+		this.alternateEmail = altEmail;
+	}
+
+	//Cambio de contraseña
+	
+	public void changepassword(String password) {
+		this.password = password; 
+	}
+	public int getmMailboxCapacity() {return mailboxCapacity; }
+	public String getAlternateEmail() { return alternateEmail;}
+	public String getPassword() { return password;}
+	
+	public String showInfo() {
+		return "NOMBRE:	" + firstName + " " + lastName + 
+				" \nCORREO DE: " + email + " " +
+				" \nCAPACIDAD DEL BUZÓN: " + mailboxCapacity + " " +"mb";
+								
+	}
 }
