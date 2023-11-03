@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Emailapp;
+
 
 /**
  *
@@ -80,7 +80,7 @@ public class GUI extends javax.swing.JFrame {
 
     	Correo.setEditable(false);
 
-    	Extencion.setEditable(false);
+    	Extencion.setEditable(True);
 
     	Divicion.add(jRadioButton1);
     	jRadioButton1.setText("Estudiante");
