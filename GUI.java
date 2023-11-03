@@ -11,7 +11,7 @@ package Emailapp;
 public class GUI extends javax.swing.JFrame {
 
 	/**
- 	* Creates new form GUI
+ 	* Crear el GUI
  	*/
 	public GUI() {
     	initComponents();
@@ -207,7 +207,7 @@ public class GUI extends javax.swing.JFrame {
 
 	Email email = new Email(firstName, lastName, department);
 
-	// Display the generated email and password in the labels
+	// Generador de labels de email y contraseña 
 	Correo.setText(email.getEmail());
 	Contraseña.setText(email.getPassword());
 	}//GEN-LAST:event_SumittActionPerformed

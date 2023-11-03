@@ -1,6 +1,6 @@
 package emailapp;//meter archivo en el paquete
 
-import java.util.Scanner;
+import java.util.Scanner; //importamos el scanner
 
 public class Email {
 	private String firstName;
