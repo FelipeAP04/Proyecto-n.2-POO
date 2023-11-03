@@ -97,3 +97,11 @@ public class GUI extends javax.swing.JFrame {
             	jRadioButton2ActionPerformed(evt);
         	}
     	});
+		Divicion.add(jRadioButton3);
+    	jRadioButton3.setText("Otro");
+    	jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        	public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	jRadioButton3ActionPerformed(evt);
+        	}
+    	});
+
