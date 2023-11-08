@@ -4,8 +4,7 @@ import java.awt.event.ActionEvent;
 
 public class GUI extends javax.swing.JFrame {
 
-    private String institucion = "";
-
+    private String institucion;
     public GUI() {
         initComponents();
     }
@@ -200,7 +199,7 @@ public class GUI extends javax.swing.JFrame {
     String firstName = Nombre.getText();
     String lastName = Apellido.getText();
     String department = "";
-    String institucion = institucion;
+    String institution = institucion;
     
     if (jRadioButton1.isSelected()) {
         department = "estudiantes";
@@ -210,7 +209,7 @@ public class GUI extends javax.swing.JFrame {
         department = "ninguno de los anteriores";
     }
 
-    Email email = new Email(firstName, lastName, department, institucion);
+    Email email = new Email(firstName, lastName, department, institution);
 
     Correo.setText(email.getEmail());
     Contraseña.setText(email.getPassword());
@@ -268,6 +267,7 @@ public class GUI extends javax.swing.JFrame {
     // End of variables declaration                   
 
     void setInstitucion(String institutionName) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    this.institucion = institutionName;
+}
+
 }

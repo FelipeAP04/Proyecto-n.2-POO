@@ -1,8 +1,7 @@
 package Emailapp;
 
 public class Inicio extends javax.swing.JFrame {
-    
-    private String institutionName;
+
     public Inicio() {
         initComponents();
     }
@@ -64,14 +63,9 @@ public class Inicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>     
     
-    public void setInstitucion(String institutionName){
-        this.institutionName = institutionName;
-    }
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) { 
-        institutionName = NInst.getText();
         GUI gui = new GUI();
-        gui.setInstitucion(institutionName);
+        gui.setInstitucion(NInst.getText());
         gui.setVisible(true);
         this.dispose();
     }                                        
