@@ -11,28 +11,22 @@ public class Email {
 	private int mailboxCapacity = 500;
 	private int defaultPasswordLenght = 10;
 	private String alternateEmail;
-	private String companySuffix = "UNI.com";
+	private String companySuffix;
 	
 	// Constructor que recibe el primer nombre y el apellido
 	
-		public Email(String firstName, String lastName) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		
+		public Email(String firstName, String lastName, String department, String companySuffix) {
+                 this.firstName = firstName;
+                this.lastName = lastName;
+                 this.department = department;
+                 this.companySuffix = companySuffix;
 		// Pregunta por el método del departamento - lo regresa
-		
-		this.department = setDepartment();
 		
 		
 		// método de contraseña aleatoria
-		
-		this.password = randomPasssword(defaultPasswordLenght);
-		System.out.println("Tú contraseña es: " + this.password);
-		
-		// Combinar elemementos para generar el email
-		email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
-		System.out.println("Tu correo es: " + email);
-	}
+                this.password = randomPasssword(defaultPasswordLenght);
+                email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
+                    }
 	
 	// Pregunta el departamento
 	
@@ -74,6 +68,10 @@ public class Email {
 		this.alternateEmail = altEmail;
 	}
 	
+        public String getEmail() {
+        return email;
+        }
+
 	//Cambio de contraseña
 	
 	public void changepassword(String password) {

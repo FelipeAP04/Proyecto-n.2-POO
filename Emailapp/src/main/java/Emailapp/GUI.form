@@ -134,7 +134,7 @@
                       <Component id="Sumitt" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="44" max="32767" attributes="0"/>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -150,7 +150,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="Nombre">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="Ej: pepitp"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
         <Property name="name" type="java.lang.String" value="Text_1" noResource="true"/>
       </Properties>
     </Component>

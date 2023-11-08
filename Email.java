@@ -1,6 +1,6 @@
+package Emailapp;
 
-
-import java.util.Scanner; //importamos el scanner
+import java.util.Scanner;
 
 public class Email {
 	private String firstName;
@@ -11,19 +11,19 @@ public class Email {
 	private int mailboxCapacity = 500;
 	private int defaultPasswordLenght = 10;
 	private String alternateEmail;
-	private String companySuffix = "UNI.com";
+	private String companySuffix;
 	
 	// Constructor que recibe el primer nombre y el apellido
 	
-		public Email(String firstName, String lastName, String department) {
-                this.firstName = firstName;
+		public Email(String firstName, String lastName, String department, String companySuffix) {
+                 this.firstName = firstName;
                 this.lastName = lastName;
-                this.department = department;
+                 this.department = department;
+                 this.companySuffix = companySuffix;
 		// Pregunta por el método del departamento - lo regresa
 		
 		
 		// método de contraseña aleatoria
-
                 this.password = randomPasssword(defaultPasswordLenght);
                 email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
                     }
@@ -43,6 +43,7 @@ public class Email {
 	
 	
 	// Genera una contraseña aleatoria
+	   
 	private String randomPasssword(int length) {
 		String passwordSet = "ABCDEFGHIJKLMNOPQRSTUWXYZ1234567890!@#$%^&*+";
 		char[] password = new char[length];
