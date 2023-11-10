@@ -38,18 +38,6 @@
                               <Component id="mostrarBt" min="-2" pref="188" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="profesorRb" min="-2" max="-2" attributes="0"/>
-                                  <Component id="estudianteRb" min="-2" max="-2" attributes="0"/>
-                                  <Component id="otroRb" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane1" alignment="1" pref="620" max="32767" attributes="0"/>
@@ -62,23 +50,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="estudianteRb" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="profesorRb" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="otroRb" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="mostrarBt" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="mostrarBt" pref="67" max="32767" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="230" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -144,38 +118,6 @@
           <Font name="Rockwell Extra Bold" size="29" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Visualizar correos"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#xbf;A qu&#xe9; departamento pertenece?"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="estudianteRb">
-      <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="Departamento"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Estudiante"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="profesorRb">
-      <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="Departamento"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Profesor"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="profesorRbActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="otroRb">
-      <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="Departamento"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Otro"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="mostrarBt">
