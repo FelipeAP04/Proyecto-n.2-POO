@@ -1,4 +1,10 @@
 package Emailapp;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 
 
 public class Correos extends javax.swing.JFrame {
@@ -13,17 +19,17 @@ public class Correos extends javax.swing.JFrame {
 
         Departamento = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaemails = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        Mostrarcorr = new javax.swing.JButton();
+        estudianteRb = new javax.swing.JRadioButton();
+        profesorRb = new javax.swing.JRadioButton();
+        otroRb = new javax.swing.JRadioButton();
+        mostrarBt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaemails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -34,32 +40,31 @@ public class Correos extends javax.swing.JFrame {
                 "Nombre", "Apellido", "Contraseña", "Correo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaemails);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 29)); // NOI18N
         jLabel1.setText("Visualizar correos");
 
         jLabel2.setText("¿A qué departamento pertenece?");
 
-        Departamento.add(jRadioButton1);
-        jRadioButton1.setText("Estudiante");
+        Departamento.add(estudianteRb);
+        estudianteRb.setText("Estudiante");
 
-        Departamento.add(jRadioButton2);
-        jRadioButton2.setText("Profesor");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        Departamento.add(profesorRb);
+        profesorRb.setText("Profesor");
+        profesorRb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                profesorRbActionPerformed(evt);
             }
         });
 
-        Departamento.add(jRadioButton3);
-        jRadioButton3.setText("Otro");
+        Departamento.add(otroRb);
+        otroRb.setText("Otro");
 
-        Mostrarcorr.setText("Mostrar");
-        Mostrarcorr.setActionCommand("Mostrar");
-        Mostrarcorr.addActionListener(new java.awt.event.ActionListener() {
+        mostrarBt.setText("Mostrar");
+        mostrarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MostrarcorrActionPerformed(evt);
+                mostrarBtActionPerformed(evt);
             }
         });
 
@@ -75,16 +80,16 @@ public class Correos extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(42, 42, 42)
-                                .addComponent(Mostrarcorr, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(mostrarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(91, 91, 91)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton2)
-                                    .addComponent(jRadioButton1)
-                                    .addComponent(jRadioButton3))))
+                                    .addComponent(profesorRb)
+                                    .addComponent(estudianteRb)
+                                    .addComponent(otroRb))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE))
                 .addContainerGap())
@@ -98,15 +103,15 @@ public class Correos extends javax.swing.JFrame {
                         .addGap(0, 23, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton1)
+                        .addComponent(estudianteRb)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)
+                        .addComponent(profesorRb)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton3))
+                        .addComponent(otroRb))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(Mostrarcorr)
+                        .addComponent(mostrarBt)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -116,13 +121,30 @@ public class Correos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MostrarcorrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarcorrActionPerformed
-           
-    }//GEN-LAST:event_MostrarcorrActionPerformed
+    private void mostrarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarBtActionPerformed
+             try {
+        BufferedReader br = new BufferedReader(new FileReader("datos.csv"));
+        DefaultTableModel model = (DefaultTableModel) tablaemails.getModel();
+        model.setRowCount(0); // Limpiar la tabla antes de cargar los datos
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] data = line.split(",");
+            if (data.length == 5) {
+                model.addRow(new Object[]{data[0], data[1], data[4], data[3]});
+            }
+        }
+
+        br.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+        // Puedes manejar la excepción de alguna manera, por ejemplo, mostrando un mensaje de error
+    }
+    }//GEN-LAST:event_mostrarBtActionPerformed
+
+    private void profesorRbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profesorRbActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_profesorRbActionPerformed
 
 
     public static void main(String args[]) {
@@ -159,13 +181,13 @@ public class Correos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Departamento;
-    private javax.swing.JButton Mostrarcorr;
+    private javax.swing.JRadioButton estudianteRb;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JButton mostrarBt;
+    private javax.swing.JRadioButton otroRb;
+    private javax.swing.JRadioButton profesorRb;
+    private javax.swing.JTable tablaemails;
     // End of variables declaration//GEN-END:variables
 }
