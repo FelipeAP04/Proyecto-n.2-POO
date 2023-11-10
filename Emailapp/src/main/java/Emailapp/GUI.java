@@ -1,7 +1,7 @@
 package Emailapp;
-import com.opencsv.CSVWriter;
 import java.io.FileWriter;
-import com.opencsv.CSVReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 public class GUI extends javax.swing.JFrame {
 
     private String institucion;
@@ -33,6 +33,7 @@ public class GUI extends javax.swing.JFrame {
         Nombre = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
+        subircsv = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,6 +107,13 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel1.setText("Ver datos en un CSV");
 
+        subircsv.setText("Guardar en csv");
+        subircsv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subircsvActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -122,8 +130,9 @@ public class GUI extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jRadioButton1)
                                             .addComponent(jRadioButton2)
-                                            .addComponent(jRadioButton3))
-                                        .addGap(67, 67, 67)
+                                            .addComponent(jRadioButton3)
+                                            .addComponent(subircsv, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(34, 34, 34)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -201,8 +210,10 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jRadioButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton3)))
-                .addGap(76, 76, 76))
+                        .addComponent(jRadioButton3)
+                        .addGap(18, 18, 18)
+                        .addComponent(subircsv, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(44, 44, 44))
         );
 
         pack();
@@ -226,7 +237,7 @@ public class GUI extends javax.swing.JFrame {
 
     Correo.setText(email.getEmail());
     Contraseña.setText(email.getPassword());
-
+    
     }//GEN-LAST:event_SumittActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -242,8 +253,46 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
+        Correos correoss = new Correos();
+        
+        correoss.setVisible(true);
+        this.dispose();  // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void subircsvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subircsvActionPerformed
+    String firstName = Nombre.getText();
+    String lastName = Apellido.getText();
+    String department = "";
+    String institution = institucion;
+    
+    if (jRadioButton1.isSelected()) {
+        department = "estudiantes";
+    } else if (jRadioButton2.isSelected()) {
+        department = "profesor";
+    } else if (jRadioButton3.isSelected()) {
+        department = "ninguno de los anteriores";
+    }
+
+    Email email = new Email(firstName, lastName, department, institution);
+
+    
+    try {
+        FileWriter fw = new FileWriter("datos.csv", true); // El true permite agregar al final del archivo
+        PrintWriter pw = new PrintWriter(fw);
+
+        // Escribir los datos en el formato (Nombre, Apellido, Departamento, Correo, Contraseña)
+        pw.println(firstName + "," + lastName + "," + department + "," + email.getEmail() + "," + email.getPassword());
+
+        pw.close();
+        fw.close();
+
+        // Puedes agregar un mensaje o realizar alguna acción después de guardar los datos en el CSV
+        System.out.println("Datos guardados en datos.csv");
+    } catch (IOException e) {
+        e.printStackTrace();
+        // Puedes manejar la excepción de alguna manera, por ejemplo, mostrando un mensaje de error
+    }// TODO add your handling code here:
+    }//GEN-LAST:event_subircsvActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -268,8 +317,7 @@ public class GUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        FileWriter fileWriter = new FileWriter("emails.csv");
-        CSVWriter csvWriter = new CSVWriter(fileWriter);
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -298,6 +346,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JButton subircsv;
     // End of variables declaration//GEN-END:variables
 
     void setInstitucion(String institutionName) {
