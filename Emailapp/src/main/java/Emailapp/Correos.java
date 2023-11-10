@@ -29,7 +29,7 @@ public class Correos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tablaemails.setForeground(new java.awt.Color(0, 153, 102));
+        tablaemails.setForeground(new java.awt.Color(91, 91, 91));
         tablaemails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
