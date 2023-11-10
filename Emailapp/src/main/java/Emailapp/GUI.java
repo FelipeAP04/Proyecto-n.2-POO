@@ -1,5 +1,7 @@
 package Emailapp;
-
+import com.opencsv.CSVWriter;
+import java.io.FileWriter;
+import com.opencsv.CSVReader;
 public class GUI extends javax.swing.JFrame {
 
     private String institucion;
@@ -266,7 +268,8 @@ public class GUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        FileWriter fileWriter = new FileWriter("emails.csv");
+        CSVWriter csvWriter = new CSVWriter(fileWriter);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
