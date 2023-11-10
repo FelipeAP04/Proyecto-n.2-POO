@@ -114,7 +114,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel1.setText("Ver datos en un CSV");
 
         subircsv.setBackground(new java.awt.Color(204, 255, 255));
-        subircsv.setText("Guardar en csv");
+        subircsv.setText("Crear");
         subircsv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subircsvActionPerformed(evt);
@@ -254,7 +254,7 @@ public class GUI extends javax.swing.JFrame {
 
     Correo.setText(email.getEmail());
     Contraseña.setText(email.getPassword());
-    
+    Extencion.setText("500 Mg");
     }//GEN-LAST:event_SumittActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -277,6 +277,14 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void subircsvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subircsvActionPerformed
+        
+        
+    Nombre.setText("");
+    Apellido.setText("");
+    Correo.setText("");
+    Contraseña.setText("");
+    Extencion.setText("");
+        
     String firstName = Nombre.getText();
     String lastName = Apellido.getText();
     String department = "";
