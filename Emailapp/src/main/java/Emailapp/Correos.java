@@ -43,7 +43,7 @@ public class Correos extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaemails);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 29)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 29)); // NOI18N
         jLabel1.setText("Visualizar correos");
 
         jLabel2.setText("¿A qué departamento pertenece?");
@@ -62,6 +62,7 @@ public class Correos extends javax.swing.JFrame {
         Departamento.add(otroRb);
         otroRb.setText("Otro");
 
+        mostrarBt.setBackground(new java.awt.Color(204, 204, 204));
         mostrarBt.setText("Mostrar");
         mostrarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,11 +79,11 @@ public class Correos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
+                                .addGap(8, 8, 8)
                                 .addComponent(mostrarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(83, 83, 83)
+                        .addGap(65, 65, 65)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addGroup(layout.createSequentialGroup()
