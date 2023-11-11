@@ -37,7 +37,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(204, 204, 204));
+        setBackground(new java.awt.Color(0, 204, 51));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
         jLabel3.setText("Ingresa tu nombre");
@@ -279,11 +279,7 @@ public class GUI extends javax.swing.JFrame {
     private void subircsvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subircsvActionPerformed
         
         
-    Nombre.setText("");
-    Apellido.setText("");
-    Correo.setText("");
-    Contraseña.setText("");
-    Extencion.setText("");
+    
         
     String firstName = Nombre.getText();
     String lastName = Apellido.getText();
@@ -317,6 +313,12 @@ public class GUI extends javax.swing.JFrame {
         e.printStackTrace();
         // Puedes manejar la excepción de alguna manera, por ejemplo, mostrando un mensaje de error
     }// TODO add your handling code here:
+    
+    Nombre.setText("");
+    Apellido.setText("");
+    Correo.setText("");
+    Contraseña.setText("");
+    Extencion.setText("");
     }//GEN-LAST:event_subircsvActionPerformed
 
     public static void main(String args[]) {
